@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>U R Web</title>
+    <link rel="stylesheet" href="css1.css">
+  </head>
+  <body prefix="schema: http://schema.org/ xsd: http://www.w3.org/2001/XMLSchema# sa: https://ns.science.ai/">
+    <header>
+      <p class="title">U R Web</p>
+      <p class="subtitle">Place Holder</p>
+    </header>
+ 
+        <article id="what" typeof="schema:ScholarlyArticle" resource="#">
+<section>
+                <ol>
+                    <li property="schema:author" typeof="sa:ContributorRole">
+                        <a property="schema:author" href="https://www.facebook.com/stefan.bogdan.182?fref=ts" typeof="schema:Person">
+                            <span property="schema:familyName">Stefan</span>
+                            <span property="schema:givenName">Bogdan</span>
+                        </a>
+                    </li>
+                    <li property="schema:author" typeof="sa:ContributorRole">
+                        <a property="schema:author" href="https://www.facebook.com/tudor.timofte?fref=ts" typeof="schema:Person">
+                            <span property="schema:familyName">Timofte</span>
+                            <span property="schema:givenName">Tudor</span>
+                        </a>
+                    </li>
+                    <li property="schema:author" typeof="sa:ContributorRole">
+                        <a property="schema:author" href="https://www.facebook.com/jijiie.catalina" typeof="schema:Person">
+                            <span property="schema:familyName">Jijiie</span>
+                            <span property="schema:givenName"> Catalina</span>
+                        </a>
+                    </li>
+                    <li property="schema:author" typeof="sa:ContributorRole">
+                        <a property="schema:author" href="https://www.facebook.com/pascal.codrin.9" typeof="schema:Person">
+                            <span property="schema:familyName">Pascal</span>
+                            <span property="schema:givenName">Codrin</span>
+                        </a>
+                    </li>
+                </ol>
+</section>
+
+<section>
+
+<body>
+     <section typeof=="sa:MaterialsAndMethods" id="Descriere">
+                <h3>U R Web</h3>
+                <figure typeof="sa:Image">
+                            <img src="img/web.png">
+                            </figure>
+    <p>Aplicatia QR-web are rolul de a oferi informatii despre anumite locatii care sunt fregventate de diversi utilizatori.</p>
+
+    <p>In datele retinute de aplicatie se vor regasi atat mail-ul unei anumite persoane, care va avea rol de identificator pentru aceasta, cat si datele reale ale acesteia (nume/prenume) ce ajuta utilizatorii in identificarea prietenilor si a locatiilor fregventate de acestia. Totodata aceasta poate pune la dispozitie si un meniu ce contine un numar mai restrans de functionalitati destinat persoanelor ce nu vor sa isi asocieze un cont in cadrul aceste aplicatii</p>
+
+    <p>Orice utilizator va putea afla in timp real atat informatii utile in legatura cu locatia in care se afla ci si care sunt cele mai fregventate locatii din zona.Totodata, fiecare scanare a unui QR determina incrementarea numarului de accesari pentru acea locatie si cresterea level-ului utilizatorului, atribut ce va arata preferintele acestuia.</p>
+
+    <p>In cadrul aplicatiei vor putea fi salvati in diverse grupuri si prietenii fiecarei persoane cu toate informatiile acestora din baza de date.Totodata QR-web poate determina in orice situatie si cea mai cautata locatie din luna precedenta.</p>
+     <section typeof=="sa:MaterialsAndMethods" id="Tehnologii folosite">
+<h1>Tehnologii folosite</h1>
+        <p>In implementarea aplicatiei vom utiliza standardele actuale in materie de web development, tehnologii precum <a href="http://www.w3schools.com/html/html5_intro.asp">HTML5</a>, <a href="http://www.w3schools.com/css/css3_intro.asp">CSS3</a>, <a href="http://www.w3schools.com/js/js_intro.asp">JavaScript</a> si <a href="http://php.net/">PHP</a> dar si diverse APIuri ce ne vor ajuta sa obtinem functionalitatile propuse.
+        </p>
+ 
+        <h3>PHP</h3>
+        <p>
+        PHP (Php:Hypertext Preprocessor) este un limbaj de programare server-side, de tip script, interpretat. Folosit inițial pentru a produce pagini web dinamice, este folosit pe scară largă în dezvoltarea paginilor și aplicațiilor web. Este unul din cele mai importante limbaje de programare web open-source și server-side, existând versiuni disponibile pentru majoritatea web serverelor și pentru toate sistemele de operare. Pentru a ne ajuta in implementarea aplicatiei am decis sa utilizam frameworkul PHP <a href="http://framework.zend.com/">Zend</a>. Zend este un framework web orientat obiect pentru php disponibil gratuit (open-source).
+        </p>
+       
+        <h3>JavaScript</h3>
+        <p>
+        JavaScript (JS) este un limbaj de programare orientat obiect bazat pe conceptul prototipurilor. Este folosit mai ales pentru introducerea unor funcționalități în paginile web, codul Javascript din aceste pagini fiind rulat de către browser.
+        Cea mai des întâlnită utilizare a JavaScript este în scriptarea paginilor web. Programatorii web pot îngloba în paginile HTML script-uri pentru diverse activități cum ar fi verificarea datelor introduse de utilizatori sau crearea de meniuri și alte efecte animate. Vom utiliza JavaScript pentru realizarea anumitor animatii si efecte vizuale dar si pentru accesarea unor functii din APIurile pe care le vom utiliza.
+        </p>
+       
+        <h3 class="API">Facebook Web SDK</h3>
+        <p>
+            Vom utiliza SDKul oferit de Facebook pentru a oferi utilizatorului posibilitatea de a se inregistra folosind contul sau si de a putea posta/distribui informatii despre aplicatie si/sau lucruri din aplicatie.
+        </p>
+       
+        <h3 class="API">Google Maps API</h3>
+        <p>
+            Google Maps va fi componenta de baza a aplicatiei. Peste hartile oferite de APIul JavaScript vom introduce functionalitatile aplicatiei noastre in timp ce Google Places API ne va returna informatii relevante locatiilor corespunzatoare.
+        </p>
+ 
+        <h3 class="API">QR Web Api</h3>
+        <p>
+            Acest API va fi utilizat pentru a crea si a scana coduri QR ce ne vor ajuta sa identificam locatiile corespunzatoare in baza noastra de date.
+        </p>
+    <section typeof=="sa:MaterialsAndMethods" id="Modelarea datelor">
+        <h3>Modelarea datelor</h3>
+    <p>
+        In cadrul aplicatiei QR-web vom utiliza pentru stocarea datelor serverul de baze de date Oracle.
+    </p>
+    <p>
+        Pentru a memora datele necesare functionarii aplicatiei, am propus o schema de baze de date bazata pe 6 tabele, dupa cum urmeaza:
+    <ul>
+        <li>Tabela <em>Useri</em> - va contine conturile tuturor userilor. Aceasta va utiliza mail-ul fiecarui utilizator ca principalul mod de identificare al         acestuia.</li><br>
+        <table border=2px>
+            <tr>
+                <th colspan="2" bgcolor="#D8F781"><strong>Useri</strong></th>
+            </tr>
+            <tr>
+                <td bgcolor="#FFFF00">Campuri</td>
+                <td bgcolor="#FFFF00">Tip</td>
+            </tr>
+            <tr>
+                <td>mail</td>
+                <td>varchar</td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td>varchar</td>
+            </tr>
+            <tr>
+                <td>user_facebook</td>
+                <td>varchar</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <li>Tabela <em>Persoane</em> - ofera informatii despre persoana reala ce utilizeaza contul identificat prin acelasi mail in tabela useri. Astfel aceasta        poate fi utilizata pentru a crea in cadrul aplicatiei liste de prieteni si a retine preferintele fiecaruia prin intermediul unui level.</li><br>
+        <table border=2px>
+            <tr>
+                <th colspan="2" bgcolor="#D8F781"><strong>Persoane</strong></th>
+            </tr>
+            <tr>
+                <td bgcolor="#FFFF00">Campuri</td>
+                <td bgcolor="#FFFF00">Tip</td>
+            </tr>
+            <tr>
+                <td>mail</td>
+                <td>varchar</td>
+            </tr>
+            <tr>
+                <td>nume</td>
+                <td>varchar</td>
+            </tr>
+            <tr>
+                <td>prenume</td>
+                <td>varchar</td>
+            </tr>
+            <tr>
+                <td>level</td>
+                <td>number</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <li>Tabela <em>Prieteni</em> - va retine prin intermediul mail-ului, pentru fiecare user, fiecare persoana pe care aceasta o adauga la lista de prieteni.
+        </li><br>
+        <table border=2px>
+            <tr>
+                <th colspan="2" bgcolor="#D8F781"><strong>Prieteni</strong></th>
+            </tr>
+            <tr>
+                <td bgcolor="#FFFF00">Campuri</td>
+                <td bgcolor="#FFFF00">Tip</td>
+            </tr>
+            <tr>
+                <td>mail</td>
+                <td>varchar</td>
+            </tr>
+            <tr>
+                <td>mail_prieten</td>
+                <td>varchar</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <li>Tabela <em>Locatii</em> - ofera informatii in legatura cu toate locatile ce detin un QR si sunt integrate in apicatie si tipul acestora(Exemplu: cafenea/statie alimentare/informatii/monument/etc.). Totodata aceasta retine un numar de accesari pentru fiecare locatie in parte pentru a putea fi identificate zonele cele mai "cautate"(all time) ale orasului.
+        </li><br>
+
+        <table border=2px>
+            <tr>
+                <th colspan="2" bgcolor="#D8F781"><strong>Locatii</strong></th>
+            </tr>
+            <tr>
+                <td bgcolor="#FFFF00">Campuri</td>
+                <td bgcolor="#FFFF00">Tip</td>
+            </tr>
+            <tr>
+                <td>QR</td>
+                <td>varchar</td>
+            </tr>
+            <tr>
+                <td>nume_Locatie</td>
+                <td>varchar</td>
+            </tr>
+            <tr>
+                <td>tip</td>
+                <td>varchar</td>
+            </tr>
+            <tr>
+                <td>nr_accesari</td>
+                <td>number</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <li>Tabela <em>Informatii</em> - retine link-uri utile catre pagini destinate locatiilor respective ce ofera inforatii despre acestea.
+        </li><br>
+
+        <table border=2px>
+            <tr>
+                <th colspan="2" bgcolor="#D8F781"><strong>Informatii</strong></th>
+            </tr>
+            <tr>
+                <td bgcolor="#FFFF00">Campuri</td>
+                <td bgcolor="#FFFF00">Tip</td>
+            </tr>
+            <tr>
+                <td>QR</td>
+                <td>varchar</td>
+            </tr>
+            <tr>
+                <td>link</td>
+                <td>varchar</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <li>Tabela <em>Vizitatori</em> - retine un xp curent al locatiei prin care doreste sa furnizeze informatii in legatura cu numarul de persoane ce vin in acea locatie pe o anumita perioada de timp bine determinata (Exemplu: luna precedenta).
+        </li><br>
+        <table border=2px>
+            <tr>
+                <th colspan="2" bgcolor="#D8F781"><strong>Vizitatori</strong></th>
+            </tr>
+            <tr>
+                <td bgcolor="#FFFF00">Campuri</td>
+                <td bgcolor="#FFFF00">Tip</td>
+            </tr>
+            <tr>
+                <td>QR</td>
+                <td>varchar</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>date</td>
+            </tr>
+            <tr>
+                <td>xp_curent</td>
+                <td>number</td>
+            <tr>
+        </table>
+        
+    </ul>
+    </p>
+
+    <section typeof="sa:MaterialsAndMethods" id="arhitectura">
+<h1>Arhitectura</h1>
+                    <section>
+                        <ol>
+                    <li>
+                        <section typeof="sa:Abstract">
+                            <h3 class="page">
+                                Presentation
+                            </h3>
+                            <p>
+                                Presentation va fi pagina cu care utilizatorul va interactiona pentru prima data.
+                            </p>
+                            <p>
+                                Pagina in sine cuprinde un sumar al aplicatiei: ceea ce ofera, ce avantaje aduce si cum se foloseste. Imaginile si textul vor
+                                fi sugestive pentru ca utilizatorul sa se familiarizeze cu aplicatia pe care o va folosi.
+                                
+                            </p>
+                            <p>
+                                Pagina va contine doua butoane: Login si Register.
+                                Login va oferi utilizatorul optiunea de a se loga fie cu contul de Facebook, fie cu un cont deja creat.
+                                Register este optiunea oferita utilizatorilor sa isi creeze un cont via e-mail, fara sa fie nevoiti sa se foloseasca de
+                                contul de Facebook.
+                                
+                            </p>
+
+                        </section>
+                    </li>
+                    
+                    <li>
+                        <section typeof="sa:Abstract">
+                            <h3 class="page">
+                                Register
+                            </h3>
+                            <figure typeof="sa:Image">
+                            <img src="img/RegisterPageTW.jpg">
+                            </figure>
+                            <p>
+                                Pagina ofera utilizatorului posibilitatea de inregistrare. Formularul are nevoie de urmatoarele date:
+                                <ul>
+                                    <li>
+                                        Nume
+                                    </li>
+                                    <li>
+                                        Prenume
+                                    </li>
+                                    <li>
+                                        E-mail
+                                    </li>
+                                    <li>
+                                        Parola
+                                    </li>
+                                    <li>
+                                        Confirmarea Parolei
+                                    </li>
+                                </ul>
+                                Dupa introducerea datelor si apasarea butonului "CREATE", contul este creat si utilizatorul va fi dus pe pagina
+                                principala, de unde va putea folosi aplicatia.
+                                
+                            </p>
+                        </section>
+                    </li>
+                    
+                    <li>
+                        <section typeof="sa:Abstract">
+                            <h3 class="page">
+                                Login
+                            </h3>
+                            <figure typeof="sa:Image">
+                            <img src="img/LoginPageTW.jpg">
+                            </figure>
+                            <p>
+                                Pagina necesita introducerea de date pentru ca un utilizator sa se conecteze la aplicatie.
+                                Pentru acest lucru este nevoie de:
+                                <ul>
+                                    <li>
+                                        Username/E-mail
+                                    </li>
+                                    <li>
+                                        Parola
+                                    </li>   
+                                </ul>
+                                ..sau logarea folosind Facebook, folosind butonul din dreapta formularului de Login.
+                                
+                            </p>
+                            <p>
+                                Daca logarea are loc cu succes, utilizatorul va fi dus pe pagina principala, de unde va putea folosi aplicatia.
+                                
+                            </p>
+                        </section>
+                    </li>
+                    
+                    <li>
+                        <section typeof="sa:Abstract">
+                            <h3 class="page">
+                                Homepage
+                            </h3>
+                            <figure typeof="sa:Image">
+                            <img src="img/HomePage.jpg">
+                            </figure>
+                            <p>
+                                Pagina este structurata in asa fel incat utilizatorul sa reuseasca cu usurinta sa gestioneze optiunile.
+                            </p>
+                            <p>
+                                Pe mijoc va aparea harta pe o anumita raza, care arata disponibilitatile din jur.
+                                Pe margini, sunt diferite optiuni pe care utilizatorul le poate accesa, acestea fiind:
+                                <ul>
+                                    <li>
+                                    Scan QR: Aceasta optiune ofera utilizatorului posibilitatea de a scana un cod QR. Pe baza acestuia,
+                                    inregistreaza locatia ca si o locatie vizitata si ofera un anumit numar de "experienta", pe care
+                                    utilizatorul il va acumula inspre avansarea catre urmatorul level. 
+                                    </li>
+                                    <li>
+                                    Reset: Daca utilizatorul a scanat un cod QR si doreste reintoarcerea la locatia sa curenta, va apasa
+                                    butonul si va fi harta actualizata cu punctul in care se afla.
+                                    </li>
+                                    <li>
+                                    My friends: Aplicatia ofera posibilitatea de a adauga prieteni iar butonul respectiv va arata prietenii
+                                    adaugati si locurile unde au fost recent.
+                                    </li>
+                                    <li>
+                                    Account: Butonul ofera utilizatorului redirectionarea catre pagina lui personala unde va putea sa isi 
+                                    schimbe datele sau sa isi verifice nivelul si experienta acumulata.
+                                    </li>
+                                </ul>
+                                
+                            </p>
+                            <p>
+                                In partea de sus va exista o bara de optiuni:
+                                <ul>
+                                    <li>
+                                        Home : pagina cu harta pe mijloc, cea curenta in momentul de fata.
+                                    </li>
+                                    <li>
+                                        My account: Acelasi lucru cu butonul Account din dreapta hartii.
+                                    </li>
+                                    <li>
+                                        Feature : Loc unde utilizatorul va putea vizualiza locurile sale preferate si unde primeste
+                                        unele notificari/stiri despre aceste locuri.
+                                    </li>
+                                    <li>
+                                        Services: Pagina unde exista descrierea aplicatiei.
+                                    </li>
+                                    <li>
+                                        Blog: Aici, utilizatorii pot accesa diferite QA-uri, in caz ca intampina probleme la folosirea
+                                        aplicatiei.
+                                    </li>
+                                    <li>
+                                        Contact: Utilizatorul poate contacta administratorii aplicatiei in cazul unor posibile erori.
+                                    </li>
+                                </ul>
+                                In josul paginii, vor fi afisate optiuni pe care utilizatorul vrea sa le acceseze mai rapid decat navigarea
+                                prin mai multe pagini.
+                                
+                            </p>    
+                        </section>
+                    </li>
+                    
+                    <li>
+                        <section typeof="sa:Abstract">
+                            <h3 class="page">
+                                Account Page
+                            </h3>
+                            <figure typeof="sa:Image">
+                            <img src="img/Account_Page.jpg">
+                            </figure>
+                            <p>
+                                Aceasta pagina ofera informatii despre contul utiizatorului.
+                                
+                            </p>
+                            <p>
+                                Sunt prezente avatarul, nivelul, experienta,statistici despre ultimele locuri vizitate si cate locuri au fost vizitate
+                                pana in prezent.
+                                
+                            </p>
+                            <p>
+                                Se pot schimba datele personale, se pot vizualiza ultimele realizari si lista de prieteni.
+                            </p>
+                        </section>
+                    </li>
+                    
+                
+                </ol>
+</section>
+<h1>Distribuirea Sarcinilor</h1>
+<ol>
+    <li>
+    Stefan Bogdan-<strong>QR</strong>
+        <ul>
+        <li>Account Page</li>
+        <li>Generare Statistici</li>
+        <li>Android App ? </li>
+        <li>QR Api</li>
+        </ul>
+    </li>
+    <li>
+    Timofte Tudor-<strong>Google Maps</strong>
+        <ul>
+        <li>Google Maps Api</li>
+        <li>Management Prieteni</li>
+        <li>Experience Management</li>
+        <li>Visitors Management</li>
+        </ul>
+    </li>
+    <li>
+    Jijiie Catalina-<strong>PL/SQL</strong>
+        <ul>
+        <li>Management Useri</li>
+        <li>Achievments</li>
+        <li>Indexarea Corespunzatoare a tabelelor </li>
+        <li>Organizarea pachetelor pl/sql</li>
+        </ul>
+    </li>
+    <li>
+    Pascal Codrin-<strong>Facebook API</strong>
+        <ul>
+        <li>Login + Register Options</li>
+        <li>Pagini Personalizate pentru QR codes</li>
+        <li>Integrare Facebook API Login</li>
+        <li></li>
+        </ul>
+    </li>
+    <li>
+        <strong>Taskuri comune</strong>
+        <ul>
+            <li>
+            Arhitectura Aplicatiei si a bazei de date
+            </li>
+            <li>
+            Page design(cascade style sheets + html)
+            </li>
+            <li>
+            Responsiveness
+            </li>
+            <li>
+            Implementare pagina principala 
+            </li>
+            <li>
+                Functii PlSQL + trigere aferente functionalitatilor respective
+            </li>
+        </ul>
+
+    </li>
+</ol>
+</section>
+
+<section typeof="sa:MaterialsAndMethods" id="planificare">
+<h1>Evolutia Proiectului</h1>
+    <ol>
+        <li>
+        Saptamana 10
+            <ul>
+                <li>Familiarizarea cu limbajul PHP si framework-ul ZEND PHP</li>
+                <li>Constructia bazei de date</li>
+                <li>Modulele primare pentru  Login si Register</li>
+            </ul>
+        </li>
+        <li>
+        Saptamana 11
+            <ul>
+                    <li>creearea qr-urilor</li>
+                    <li>adaugarea paginilo de informatii aditionale pentru fiecare QR code</li>
+                    <li>Actualizarea bazei de date</li>
+            </ul>
+        </li>
+        
+        <li>
+        Saptamana 12
+            <ul>
+                    <li>interactiunea cu API-urile</li>
+                    <li>gestiunea fisierelor de pe server</li>
+            </ul>
+
+        </li>
+
+        <li>
+        Saptamana 13
+            <ul>
+                    <li></li>
+                    <li>implementarea sortarii</li>
+            </ul>
+
+        </li>
+        <li>
+        Saptamana 14
+            <ul>
+                    <li>foi de stiluri</li>
+                    <li>responsiveness</li>
+            </ul>
+
+        </li>
+    </ol>
+</section>
+</article>
+<footer>
+      <p>
+        <a href="http://www.info.uaic.ro/bin/Main/">FII</a>
+        •
+        <a href="http://profs.info.uaic.ro/~busaco/teach/courses/web/">Tehnologii Web</a>
+        •
+         <a href="http://profs.info.uaic.ro/~busaco/teach/courses/web/projects/xml-transform.php?pag=projects">Proiecte</a>
+        
+        
+      </p>
+</footer>
+
+</body>
+</html>
